@@ -14,8 +14,8 @@ class Comedy(Movies):
 class Drama(Movies):
     def __init__ (self,movies):
         super().__init__(movies)
-    def add_movie(self,movie):
-        self.movies.append(movie)
+    def add_movie(self,movies):
+        super().add_movie(movies)
         return f'Драмы: {self.movies}'
 
 comedies_list = []
