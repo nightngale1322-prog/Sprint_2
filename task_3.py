@@ -1,7 +1,7 @@
 class PointsForPlace:
     def __init__(self, place):
         self.place = place
-
+        self.points = 0
     def get_points_for_place(self):
         if self.place > 100:
             print('Баллы начисляются только первым 100 участникам')
@@ -23,10 +23,10 @@ class PointsForMeters:
 class TotalPoints(PointsForPlace, PointsForMeters):
     def __init__(self, points):
         super().__init__(points)
-        self.points = 0
+        
     def get_total_points(self, meters, place):
         points_place = self.get_points_for_place()
-        points_meters = PointsForMeters.get_points_for_meters(meters)
+        points_meters = self.get_points_for_meters(meters)
         total = points_place + points_meters
         return total
    

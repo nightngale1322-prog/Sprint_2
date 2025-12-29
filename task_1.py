@@ -17,7 +17,7 @@ class ExtendedCase(Case):
         self.environment = environment
         super().__init__(test_case_id, name, step_description, expected_result)
     def print_test_case_info(self):
-        Case.print_test_case_info (self)
+        super().print_test_case_info ()
         print (f"\nПредусловие: {self.precondition} \nОкружение: {self.environment}")
 
 case = ExtendedCase ('1', 'Наличие кнопки Принять', '1. Открыть вкладку приёма документов 2. Проверить наличие кнопки ', 'Кнопка доступна', 'Открыть сервис', 'Яндекс Браузер')
